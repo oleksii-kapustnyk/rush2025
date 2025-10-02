@@ -11,7 +11,7 @@ public class Lesson1 {
     public static void main(String[] args) { //comment
         //start
         //TODO check if equals
-        System.out.println("Hello Rush!!!");
+        System.out.println("Helo Rush!!!");
         ////
         int a = 5;
 //        Integer i = 5;

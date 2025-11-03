@@ -1,0 +1,7 @@
+Ivan,250.56,Book
+Oleksii,120.00,Notebook
+Petro,150.75,Pencil
+Olena,300.00,Eraser
+Serhii,200.00,Pencil
+Olena, 357.78,Films
+Petro, 250.00,Book

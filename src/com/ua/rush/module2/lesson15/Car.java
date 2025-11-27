@@ -2,7 +2,49 @@ package com.ua.rush.module2.lesson15;
 
 public class Car {
 
-    private int power;
     private String name;
+    private String color;
+    private Engine engine;
 
+
+
+    public class Engine {
+        private int power;
+
+        public Engine(int power) {
+            this.power = power;
+        }
+
+        public int getPower() {
+            return power;
+        }
+
+        public void setPower(int power) {
+            this.power = power;
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
 }

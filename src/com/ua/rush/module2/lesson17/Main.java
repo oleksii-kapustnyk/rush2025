@@ -34,23 +34,42 @@ public class Main {
 //            }
 //        }
 
-        MathOps mathOps = new MathOpsImpl();
+//        MathOps mathOps = new MathOpsImpl();
+//
+//        MathOps proxy = (MathOps) Proxy.newProxyInstance(
+//                MathOps.class.getClassLoader(),
+//                new Class[] {MathOps.class},
+//                ((proxy1, method, args1) -> {
+//                    int value = (int) args1[0];
+//                    if (value < 0) {
+//                        throw new IllegalArgumentException("Value must be positive");
+//                    }
+//
+//                    var result = method.invoke(mathOps, args1);
+//                    System.out.println("after method");
+//                    return result;
+//                })
+//        );
+//
+//        System.out.println(proxy.doubleIt(5));
+//        System.out.println(proxy.doubleIt(-5));
 
-        MathOps proxy = (MathOps) Proxy.newProxyInstance(
-                MathOps.class.getClassLoader(),
-                new Class[] {MathOps.class},
-                ((proxy1, method, args1) -> {
-                    int value = (int) args1[0];
-                    if (value < 0) {
-                        throw new IllegalArgumentException("Value must be positive");
-                    }
+        Calculator slowCalc = new CalculatorImpl();
 
-                    return method.invoke(mathOps, args1);
-                })
+        Calculator proxy = (Calculator) Proxy.newProxyInstance(
+                Calculator.class.getClassLoader(),
+                new Class[] {Calculator.class},
+                (proxy1, method, args1) -> {
+                    long startTime = System.currentTimeMillis();
+                    var result = method.invoke(slowCalc, args1);
+                    long endTime = System.currentTimeMillis();
+                    System.out.println("Time taken: " + (endTime - startTime) + "ms");
+
+                    return result;
+                }
         );
 
-        System.out.println(proxy.doubleIt(5));
-        System.out.println(proxy.doubleIt(-5));
+        proxy.calculate(200000000);
 
 
 

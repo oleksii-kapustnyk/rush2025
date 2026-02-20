@@ -1,7 +1,6 @@
 package com.ua.rush.module2.lesson6;
 
-import com.ua.rush.lesson20.Person;
-import com.ua.rush.lesson20.Sex;
+import com.ua.rush.module1.lesson20.Person;
 
 import java.util.Optional;
 

@@ -1,14 +1,8 @@
 package com.ua.rush.module2.lesson6;
 
-import com.ua.rush.lesson20.Person;
-
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class Main {
